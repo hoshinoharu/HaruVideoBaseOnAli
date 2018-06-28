@@ -6,6 +6,7 @@
 控制器
 
 主要用于视频的控制，然后再通知Panel的改变状态，项目中是由一个FrameLayout来实现控制器的功能，初始化的时候会添加视频的View到内部。
+
 ###权限
 视频播放时的缓存，需要文件读写权限
 ```java
@@ -15,6 +16,18 @@
      */
     void checkPermission(Activity activity) ;
 ```
+
+### 直播和普通视频的区分
+```java
+    /**
+     * 视频是否可以控制进度
+     *
+     * @return 比如直播就无法控制进度
+     */
+    boolean canControlProgress();
+```
+通过继承项目中的Controller 重载此方法，在面板中显示的时候可以根据这个方法来判断，项目中的ControlPanel的实现是区分了是否是直播，来隐藏和显示进度条。
+
 ## ControlPanel
 控制面板
 主要用于视频控制器于用户交互的部分 通过Controller的bindControlPanel方法绑定 顶层是面板接口 里面定义了视频播放时间的回调，由控制器来调用
