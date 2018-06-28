@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Demon/Demon.iml" filepath="$PROJECT_DIR$/Demon/Demon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/haruvideo/HaruVideo.iml" filepath="$PROJECT_DIR$/haruvideo/HaruVideo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HaruVideoBaseOnAli.iml" filepath="$PROJECT_DIR$/HaruVideoBaseOnAli.iml" />
+    </modules>
+  </component>
+</project>
