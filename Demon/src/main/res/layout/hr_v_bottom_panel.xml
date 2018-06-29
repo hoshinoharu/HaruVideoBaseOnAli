@@ -21,7 +21,7 @@
             android:layout_marginTop="16dp"
             android:max="100"
             android:maxHeight="2dp"
-            android:progressDrawable="@drawable/seek_bar"
+            android:progressDrawable="@drawable/hr_v_seek_bar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -36,7 +36,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fullScreenSeekBar"
-            app:srcCompat="@drawable/play"
+            app:srcCompat="@drawable/hr_v_play"
             android:scaleType="fitXY"
             />
 
@@ -72,7 +72,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/play"
+            app:srcCompat="@drawable/hr_v_play"
             android:scaleType="fitXY"
             />
 
@@ -85,7 +85,7 @@
             android:paddingEnd="8dp"
             android:max="100"
             android:maxHeight="2dp"
-            android:progressDrawable="@drawable/seek_bar"
+            android:progressDrawable="@drawable/hr_v_seek_bar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/normalScreenTime"
             app:layout_constraintStart_toEndOf="@+id/normalScreenPlayButton"
@@ -114,7 +114,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/full"
+            app:srcCompat="@drawable/hr_v_full"
             android:scaleType="fitXY"
             />
     </android.support.constraint.ConstraintLayout>

@@ -8,7 +8,7 @@
         android:id="@+id/backBtn"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:src="@drawable/back"
+        android:src="@drawable/hr_v_back"
         android:scaleType="fitXY"
         />
 

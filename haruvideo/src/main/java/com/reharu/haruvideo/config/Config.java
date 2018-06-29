@@ -8,8 +8,8 @@ import android.content.SharedPreferences;
  */
 
 public class Config {
-    public float brightness = 50f;
-    public float volume = 0f;
+    private float brightness = 50f;
+    private float volume = 0f;
     private static Config config;
 
     private Config() {
@@ -45,4 +45,32 @@ public class Config {
                 .apply();
     }
 
+    public float getBrightness() {
+        return brightness;
+    }
+
+    public void setBrightness(float brightness) {
+        if (brightness < 0) {
+            this.brightness = 0;
+        } else if (brightness > 100) {
+            this.brightness = 100;
+        } else {
+            this.brightness = brightness;
+        }
+    }
+
+    public float getVolume() {
+        return volume;
+    }
+
+    public void setVolume(float volume) {
+        if (volume < 0) {
+            this.volume = 0;
+        } else if (volume > 100) {
+            this.volume = 100;
+        } else {
+            this.volume = volume;
+        }
+
+    }
 }

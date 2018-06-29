@@ -6,15 +6,14 @@
     android:layout_height="match_parent"
     tools:context="com.reharu.haruvideo.MainActivity">
 
-    <com.reharu.haruvideo.controlpanel.HaruControlPanelImpl
+    <com.reharu.haruvideo.widget.HaruControlPanelImpl
         android:id="@+id/controlPanel"
         android:layout_width="match_parent"
         android:layout_height="256dp">
-
         <com.reharu.haruvideo.view.HaruVideoView
             android:id="@+id/playerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></com.reharu.haruvideo.view.HaruVideoView>
-    </com.reharu.haruvideo.controlpanel.HaruControlPanelImpl>
+            android:layout_height="match_parent"/>
+    </com.reharu.haruvideo.widget.HaruControlPanelImpl>
 
 </android.support.constraint.ConstraintLayout>

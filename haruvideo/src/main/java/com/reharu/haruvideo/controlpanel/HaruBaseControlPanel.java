@@ -24,7 +24,7 @@ import java.util.List;
  * 基础的控制面板 由 6块区域组成 分为两层 前景图层 背景图层 背景图层包含4块，上下左右区域
  */
 
-public abstract class BaseControlPanel extends FrameLayout implements HaruControlPanel {
+public abstract class HaruBaseControlPanel extends FrameLayout implements HaruControlPanel {
 
     private ViewGroup leftPanel;
 
@@ -55,11 +55,11 @@ public abstract class BaseControlPanel extends FrameLayout implements HaruContro
      */
     private HaruVideoControlGestureDetector gestureDetector;
 
-    public BaseControlPanel(@NonNull Context context) {
+    public HaruBaseControlPanel(@NonNull Context context) {
         super(context);
     }
 
-    public BaseControlPanel(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public HaruBaseControlPanel(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 

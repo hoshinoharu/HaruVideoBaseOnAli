@@ -1,4 +1,4 @@
-package com.reharu.haruvideo.controlpanel;
+package com.reharu.haruvideo.widget;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -21,7 +21,7 @@ import android.widget.TextView;
 
 import com.reharu.haruvideo.R;
 import com.reharu.haruvideo.control.HaruVideoController;
-import com.reharu.haruvideo.controlpanel.BaseControlPanel;
+import com.reharu.haruvideo.controlpanel.HaruBaseControlPanel;
 import com.reharu.haruvideo.controlpanel.PanelAdapter;
 import com.reharu.haruvideo.gesture.HaruVideoControlListener;
 import com.reharu.haruvideo.utils.TimeUtil;
@@ -31,7 +31,7 @@ import com.reharu.haruvideo.view.HaruSeekBar;
  * Created by hoshino on 2018/6/21.
  */
 
-public class HaruControlPanelImpl extends BaseControlPanel implements Handler.Callback, HaruSeekBar.OnProgressSubmitListener, PanelAdapter {
+public class HaruControlPanelImpl extends HaruBaseControlPanel implements Handler.Callback, HaruSeekBar.OnProgressSubmitListener, PanelAdapter {
     /**
      * 用于计时的handler
      */
@@ -112,15 +112,15 @@ public class HaruControlPanelImpl extends BaseControlPanel implements Handler.Ca
     }
 
     protected int getStopImageResID() {
-        return R.drawable.stop;
+        return R.drawable.hr_v_stop;
     }
 
     protected int getPauseImageResID() {
-        return R.drawable.pause;
+        return R.drawable.hr_v_pause;
     }
 
     protected int getPlayImageResID() {
-        return R.drawable.play;
+        return R.drawable.hr_v_play;
     }
 
     @Override
@@ -141,13 +141,13 @@ public class HaruControlPanelImpl extends BaseControlPanel implements Handler.Ca
 
     @Override
     public void onInitTopPanel(ViewGroup topPanel) {
-        View view = LayoutInflater.from(topPanel.getContext()).inflate(R.layout.top_panel, topPanel, true);
+        View view = LayoutInflater.from(topPanel.getContext()).inflate(R.layout.hr_v_top_panel, topPanel, true);
         backBtn = view.findViewById(R.id.backBtn);
     }
 
     @Override
     public void onInitBottomPanel(ViewGroup bottomPanel) {
-        View view = LayoutInflater.from(getContext()).inflate(R.layout.bottom_panel, bottomPanel, true);
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.hr_v_bottom_panel, bottomPanel, true);
 
         fullScreenButton = view.findViewById(R.id.fullScreenButton);
         fullScreenButton.setOnClickListener(v -> controller.fullScreen((Activity) getContext()));
@@ -176,7 +176,7 @@ public class HaruControlPanelImpl extends BaseControlPanel implements Handler.Ca
 
     @Override
     public void onInitFrontPanel(ViewGroup frontPanel) {
-        View view = LayoutInflater.from(frontPanel.getContext()).inflate(R.layout.front_panel, frontPanel, true);
+        View view = LayoutInflater.from(frontPanel.getContext()).inflate(R.layout.hr_v_front_panel, frontPanel, true);
         loadingView = view.findViewById(R.id.loadingView);
         voiceBrightImg = view.findViewById(R.id.voiceBrightImg);
         voiceBrightSeekBar = view.findViewById(R.id.voiceBrightSeekBar);
@@ -278,7 +278,7 @@ public class HaruControlPanelImpl extends BaseControlPanel implements Handler.Ca
             public void onStartSetBrightness() {
                 cancelHide();
                 voiceBrightPanel.setVisibility(VISIBLE);
-                voiceBrightImg.setImageResource(R.drawable.brightness);
+                voiceBrightImg.setImageResource(R.drawable.hr_v_brightness);
                 voiceBrightSeekBar.setProgress((int) controller.getBrightness());
             }
 
@@ -286,7 +286,7 @@ public class HaruControlPanelImpl extends BaseControlPanel implements Handler.Ca
             public void onStartSetVolume() {
                 cancelHide();
                 voiceBrightPanel.setVisibility(VISIBLE);
-                voiceBrightImg.setImageResource(R.drawable.voice);
+                voiceBrightImg.setImageResource(R.drawable.hr_v_voice);
                 voiceBrightSeekBar.setProgress((int) controller.getVolume());
 
             }

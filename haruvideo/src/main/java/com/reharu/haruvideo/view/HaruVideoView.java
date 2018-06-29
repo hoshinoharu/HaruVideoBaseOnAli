@@ -164,7 +164,7 @@ public class HaruVideoView extends FrameLayout implements HaruVideoController, M
             Config config = Config.getInstance(getContext());
             getPlayer().play();
             //获取音量配置 设置上
-            getPlayer().setVolume((int) config.volume);
+            getPlayer().setVolume((int) config.getVolume());
             //默认进去的时候是0 当正在准备的时候拉动进度条 会记录播放位置
             curPlayPos = getPlayer().getCurrentPosition();
             if (controlPanel != null) {
@@ -357,26 +357,26 @@ public class HaruVideoView extends FrameLayout implements HaruVideoController, M
         lp.screenBrightness = lPercent / 100f;
         window.setAttributes(lp);
         Config config = Config.getInstance(getContext());
-        config.brightness = lPercent;
+        config.setBrightness(lPercent);
         config.save(getContext());
     }
 
     @Override
     public float getBrightness() {
-        return Config.getInstance(getContext()).brightness;
+        return Config.getInstance(getContext()).getBrightness();
     }
 
     @Override
     public void setVolume(float vPercent) {
         getPlayer().setVolume((int) vPercent);
         Config config = Config.getInstance(getContext());
-        config.volume = vPercent;
+        config.setVolume(vPercent);
         config.save(getContext());
     }
 
     @Override
     public float getVolume() {
-        return Config.getInstance(getContext()).volume;
+        return Config.getInstance(getContext()).getVolume();
     }
 
     private ViewGroup.LayoutParams normalLayout;

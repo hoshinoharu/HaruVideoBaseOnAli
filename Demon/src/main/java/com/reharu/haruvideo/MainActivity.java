@@ -8,7 +8,7 @@ import android.util.Log;
 import com.reharu.haruvideo.config.Config;
 import com.reharu.haruvideo.control.HaruVideoController;
 import com.reharu.haruvideo.controlpanel.HaruControlPanel;
-import com.reharu.haruvideo.controlpanel.HaruControlPanelImpl;
+import com.reharu.haruvideo.widget.HaruControlPanelImpl;
 
 public class MainActivity extends AppCompatActivity implements HaruControlPanel.PanelStateListener {
 
@@ -38,9 +38,9 @@ public class MainActivity extends AppCompatActivity implements HaruControlPanel.
 
         videoController.setPlayUrl(playUrl);
 
-        videoController.setBrightness(Config.getInstance(this).brightness);
+        videoController.setBrightness(Config.getInstance(this).getBrightness());
 
-        videoController.setVolume(Config.getInstance(this).volume);
+        videoController.setVolume(Config.getInstance(this).getVolume());
 
         videoController.checkPermission(this);
 
